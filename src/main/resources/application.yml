@@ -1,0 +1,61 @@
+server:
+  port: 8083
+  servlet:
+    context-path: /
+
+spring:
+  application:
+    name: auth
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    url: jdbc:postgresql://ec2-54-146-91-153.compute-1.amazonaws.com:5432/d81f9nj9dfch8l
+    username: hqnbhxjbanrqta
+    password: 9316aad4497281f388b8b8563261d2890a6f3dce9476f3806c7f27939ee70d89
+  jmx:
+    enabled: true
+  jpa:
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+    show-sql: true
+    hibernate:
+      ddl-auto: update
+#  security:
+#    oauth2:
+#      client:
+#        provider:
+#          token-uri: http://localhost:8083/oauth/token
+#  rabbitmq:
+#    host: localhost
+#    port: 5672
+#    username: admin
+#    password: admin
+#security:
+#  oauth2:
+#    authorization:
+#      check-token-access: permitAll()
+host:
+  link:
+    authorization: http://localhost:8083/oauth/token
+    
+security:
+  oauth2:
+    resource:
+      user-info-uri: http://localhost:8083/person-auth/me
+
+eureka:
+  instance:
+    hostname: localhost
+  client:
+    fetch-registry: true
+    register-with-eureka: true
+    service-url:
+      defaultZone: https://eureka-server-app-dev.herokuapp.com/eureka
+
+#auth:
+#  properties:
+#    amqp:
+#      exchange: person.exg.create-user.auth
+#      routing-key: person.rtg-key.auth
+#      queue: person.queue.create-user.auth
+#    security:
+#      secret-key: key_pass_auth_
+#      expired-in: 360000 
