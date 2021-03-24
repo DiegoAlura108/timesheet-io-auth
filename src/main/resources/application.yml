@@ -34,12 +34,12 @@ spring:
 #      check-token-access: permitAll()
 host:
   link:
-    authorization: http://localhost:8083/oauth/token
+    authorization:  https://ms-timesheet-auth-app-dev.herokuapp.com/oauth/token
     
 security:
   oauth2:
     resource:
-      user-info-uri: http://localhost:8083/person-auth/me
+      user-info-uri:  https://ms-timesheet-auth-app-dev.herokuapp.com/person-auth/me
 
 eureka:
   instance:
