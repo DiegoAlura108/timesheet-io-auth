@@ -1,1 +1,1 @@
-web: java $JAVA_OPTS -jar -Dserver.port=8083 target/auth*.jar
+web: java $JAVA_OPTS -jar -Dserver.port=$PORT target/auth*.jar
